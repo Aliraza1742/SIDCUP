@@ -43,13 +43,13 @@ The Sidcup Family Golf website provides information about Sidcup Family Golf, a 
 1.  Clone the repository to your local machine:
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/Aliraza1742/SIDCUP.git
     ```
 
 2.  Navigate to the project directory:
 
     ```bash
-    cd <project_directory>
+    cd SIDCUP
     ```
 
 3.  Open the `index.html` file in your web browser.
