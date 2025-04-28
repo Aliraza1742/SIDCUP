@@ -1,0 +1,459 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Montserrat";
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+#nav img {
+    height: 70px;
+}
+
+#cursor {
+    height: 30px;
+    width: 30px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+#cursor-blur {
+    height: 250px;
+    width: 250px;
+    background-color: #96c11e7f;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+    filter: blur(32px);
+}
+
+#nav {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 50px;
+    padding-left: 120px;
+    gap: 45px;
+    position: fixed;
+    z-index: 99;
+}
+
+#nav img {
+    height: 70px;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#page-1 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page-1 h1 {
+    font-size: 130px;
+    text-transform: uppercase;
+    font-weight: 900;
+    position: relative;
+}
+
+#page-1 h1::before {
+    content: "Eat. Drink. Play.";
+    position: absolute;
+    color: black;
+    top: -5px;
+    left: -5px;
+    -webkit-text-stroke: 2px #95C11E;
+    z-index: -1;
+}
+
+#page-1 h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+#page-1 p {
+    font-size: 17px;
+    font-weight: 500;
+    width: 48%;
+}
+
+#page-2 {
+    min-height:100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+#scroller-1 {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 23s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+    display: inline-block;
+    font-size: 140px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: Arial;
+    transition: all linear 0.5s;
+    color: transparent;
+    margin-right: 20px;
+    -webkit-text-stroke: 2px #95C11E;
+}
+
+#scroller h4:hover {
+    color: #95C11E;
+}
+
+#About-section {
+    width: 100%;
+    height: 45%;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 50px;
+    padding: 65px;
+}
+
+#About-section img {
+    height: 200px;
+    width: 200px;
+    margin-top: 110px;
+    border-radius: 30px;
+}
+
+#About {
+    width: 60%;
+    height: 100%;
+}
+
+#About h3 {
+    margin-bottom: 70px;
+    font-size: 70px;
+    text-transform: uppercase;
+}
+
+#About p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: -40px;
+    line-height: 35px;
+}
+
+#cards-container {
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    gap: 55px;
+}
+
+.card {
+    height: 80%;
+    width: 24%;
+    border-radius: 15px;
+    background-color: ; /* fallback color */
+    background-size: cover;
+    background-position: center;
+    background-color: #96c11e3c;
+    background-blend-mode: overlay;
+    position: relative;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+/* Hover effect to scale up the card */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Updated Golf-themed images */
+#card1 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card2 {
+    background-image: url("https://cdn.pixabay.com/photo/2016/01/19/17/50/golf-1148683_1280.jpg");
+}
+
+/* Golf Training image for Card 3 */
+#card3 {
+    background-image: url("https://www.golfspan.com/wp-content/uploads/2022/06/Golf-training-drill-for-a-beginner.jpg");
+}
+
+/* Overlay for card content */
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(149, 193, 30, 0.9); /* Semi-transparent overlay */
+    padding: 30px;
+    padding-top: 120px;
+    opacity: 0; /* Hidden initially */
+    transition: all ease 0.6s;
+}
+
+.overlay h4 {
+    color: black;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    font-weight: 800;
+}
+
+.overlay p {
+    color: black;
+    font-size: 16px;
+}
+
+/* Show overlay on hover */
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.card:hover{
+    transform: rotate3d(-1,1,0,15deg);
+}
+
+#Green-div{
+    height: 35vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 20px;
+    background: linear-gradient(to left bottom,#119F3A,#95C11E);
+}
+
+#Green-div h4{
+    width: 47%;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 700;
+    line-height: 47px;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 10px;
+    }
+
+#Green-div img{
+    height: 100%;
+    width:15%;
+    object-fit: cover;
+    image-orientation:flip;
+}
+
+#page-3{
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+#page-3>p{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 43px;
+    width: 55%;
+    text-align: center;
+}
+
+#page-3 img{
+    position: absolute;
+    height: 60px;
+}
+#page-3 #colon1 {
+    top: 20%;
+    left: 15%;
+}
+#page-3 #colon2 {
+    bottom: 21%;
+    right: 16%;
+}
+
+#page-4{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 55px;
+}
+#elem{
+    height:70%;
+    width:24%;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+#elem h2{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 30px;
+    color: black;
+    transition: all ease 0.5s;
+    position: absolute;
+    z-index: 10;
+}
+
+#elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+    scale: 1.1;
+}
+
+#elem:hover h2{
+    color: white;
+    background-color: transparent;
+}
+#elem:hover img{
+    scale:1;
+}
+
+#page-4 h1{
+    font-size: 80px;
+    width: auto;
+    font-weight: 800;
+    position: absolute;
+    top: -10%;
+    color: black;
+    -webkit-text-stroke:  2px white;
+    font-family:Arial ;
+}
+#footer{
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom,#119F3A 0%,#A3D421 80%);
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 150px;
+    padding: 0 100px;
+}
+#footer>img{
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+}
+#f1 img{
+    height: 85px;
+}
+#f1,#f2,#f3,#f4{
+    width: fit-content;
+    position: relative;
+    z-index: 2;
+}
+#f2 h3{
+    font-size: 30px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom: 5px;
+    line-height: 50px;
+}
+
+#f3 h3{
+    font-size: 30px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    margin-bottom:8px;
+    line-height: 50px;
+
+}
+#f4 h4{
+    font-size: 18px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+
+
+
+/* CSS Animation for Scrolling */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
